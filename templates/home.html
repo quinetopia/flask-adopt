@@ -3,8 +3,14 @@
 <p>Home page</p>
 {% for pet in pets %}
 
-{{pet.photo_url}} {{pet_name}} 
-{% if pet.available %}<bold>Available</bold>{% endif %}}
-
+<ul>
+    <li>
+        <img src="{{pet.photo_url}}" alt="">
+        <a href="/{{pet.id}}">{{pet.name}}</a>
+        {% if pet.available %}<bold>Available</bold>{% endif %}
+    </li>
+</ul>
 {% endfor %}
+
+<a href="/add">Add a Pet</a>
 {% endblock %}
